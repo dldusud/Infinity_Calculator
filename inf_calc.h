@@ -25,7 +25,7 @@ typedef struct _number {
     int positive;
 } Num;
 
-List inf_to_pos(char* infix_expession);     // 중위 연산식을 후위 연산식으로 변환
+List inf_to_pos(char* infix_expression);     // 중위 연산식을 후위 연산식으로 변환
 Num calculator(char* postfix_expression);   // 후위 연산식을 계산
 void print_result(Num result);              // 계산한 결과 출력
 
