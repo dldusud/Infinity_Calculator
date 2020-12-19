@@ -7,6 +7,13 @@ CMakeFiles/inf_calc.dir/LinkedList.c.obj: ../LinkedList.h
 CMakeFiles/inf_calc.dir/Stack.c.obj: ../Stack.c
 CMakeFiles/inf_calc.dir/Stack.c.obj: ../Stack.h
 
+CMakeFiles/inf_calc.dir/inf_calc.c.obj: ../LinkedList.h
+CMakeFiles/inf_calc.dir/inf_calc.c.obj: ../Stack.h
+CMakeFiles/inf_calc.dir/inf_calc.c.obj: ../inf_calc.c
+CMakeFiles/inf_calc.dir/inf_calc.c.obj: ../inf_calc.h
+
 CMakeFiles/inf_calc.dir/main.c.obj: ../LinkedList.h
+CMakeFiles/inf_calc.dir/main.c.obj: ../Stack.h
+CMakeFiles/inf_calc.dir/main.c.obj: ../inf_calc.h
 CMakeFiles/inf_calc.dir/main.c.obj: ../main.c
 

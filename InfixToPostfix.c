@@ -1,48 +1,46 @@
-#include "inf_calc.h"
+#include "InfixToPostfix.h"
+#include "InfinityCalculator.h"
 
-/******************************* 후위연산식 변경 함수 시작 **************************************/
-int getOpPrec(char op);
-int whoPrecOp(char op1, char op2);
-
-List inf_to_pos(char* exp) {
-    Stack stack;
-    List convExp;
-    int i, idx = 0;
+List ConvToRPNExp(char* exp) {
+    Operator op;
+    Postfix convExp;
+    int i;
     char tok, popOp;
 
-    StackInit(&stack);
+    OperatorInit(&op);
 
     for (i = 0; exp[i] == NULL; i++) {
         tok = exp[i];
         if (isdigit(tok)) {                         // tok에 저장된 문자가 숫자인지 확인
-            LInsert(&convExp, tok);                 // 숫자라면 배열에 저장
+            Insert(&convExp, tok);                 // 숫자라면 리스트에 삽입
         } else {                                    // tok에 저장된 문자가 숫자가 아니라면,
             switch (tok) {
                 case '.':                           // '.' 이면,
-                    LInsert(&convExp, tok);         // 소수점을 배열에 저장.
+                    Insert(&convExp, tok);         // 소수점을 리스트에 삽입.
+                    break;
                 case '(':                           // '(' 이면,
-                    Push(&stack, tok);              // stack애 쌓는다.
+                    OperatorPush(&op, tok);              // stack애 쌓는다.
                     break;
                 case ')':                           // ')' 이면,
                     while (1) {                     // 반복해서
-                        popOp = Pop(&stack);        // stack에서 꺼낸다.
+                        popOp = OperatorPop(&stack);        // stack에서 꺼낸다.
                         if (popOp == '(')           // '(' 일 때까지,
                             break;
-                        LInsert(&convExp, popOp);   // 배열에 연산자 저장
+                        Insert(&convExp, popOp);   // 리스트에 연산자 삽입
                     }
                     break;
                 case '+': case '-':
                 case '*': case '/':
-                    while (!SIsEmpty(&stack) && whoPrecOp(Peek(&stack), tok) >= 0)
-                        LInsert(&convExp, Pop(&stack));
-                    Push(&stack, tok);
+                    while (!OperatorIsEmpty(&op) && whoPrecOp(OperatorPeek(&op), tok) >= 0)
+                        Insert(&convExp, OperatorPop(&op));
+                    OperatorPush(&op, tok);
                     break;
             }
         }
     }
 
-    while (!SIsEmpty(&stack))                   // 스택에 남아있는 모든 연산자를,
-        LInsert(&convExp, Pop(&stack));         // 배열에 저장.
+    while (!SIsEmpty(&op))                   // 스택에 남아있는 모든 연산자를,
+        Insert(&convExp, OperatorPop(&op));         // 리스트에 삽입.
 
     return convExp;
 }
@@ -72,14 +70,3 @@ int whoPrecOp(char op1, char op2) {
     else                        // 연산자 우선순위가 서로 같을 경우,
         return 0;
 }
-
-/******************************* 후위연산식 변경 함수 종료 **************************************/
-
-Num calculator(List postfix_expression) {
-
-}
-
-void print_result(Num result) {
-
-}
-
