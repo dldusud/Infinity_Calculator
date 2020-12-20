@@ -10,14 +10,15 @@ Num EvalRPNExp(List * postExp) {
     char tok;
 
     OperandInit(&operand);
-    NumInit(&op);
+    NumInit(&num);
+    NumInit(&result);
 
     while (postExp->head != NULL) {
         tok = postExp->head->data;
         int n = tok - '0';
 
         if (isdigit(tok)) {
-            if (flag == INT) {
+            if (flag == 0) {
                 IntPartPush(&num, n);
                 num.integer_part_size++;
             } else if (flag == FALSE){
@@ -28,7 +29,7 @@ Num EvalRPNExp(List * postExp) {
             flag = FALSE;
         } else if (tok == ' ') {
             flag = TRUE;
-            OperandPush(&operand, num);
+            OperandPush(&operand, &num);
         } else {
             switch (tok) {
                 case '+':
@@ -46,7 +47,23 @@ Num EvalRPNExp(List * postExp) {
 }
 
 Num Plus(Num op1, Num op2) {
+    int integer[] = { 0, };
+    int decimal[] = { 0, };
 
+    struct Digit *curr1 = (&op1)->decimal_part;
+    struct Digit *curr2 = (&op2)->decimal_part->next;
+
+
+    int i = 0;
+    while (curr1->next != NULL || curr2->next != NULL) {
+        decimal[i] = curr1->digit + curr2->digit;
+        if (decimal[i] >= 10) {
+            decimal[i] -= 10;
+            decimal[i+1]++;
+        }
+        curr1 = curr1->next;
+        curr2 = curr2->next;
+    }
 }
 
 Num Minus(Num op1, Num op2) {
@@ -59,4 +76,12 @@ Num Multiply(Num op1, Num op2) {
 
 Num Divide(Num op1, Num op2) {
 
+}
+
+int main()
+{
+    List s;
+    ListInit(&s);
+
+    LInsert(1);
 }
