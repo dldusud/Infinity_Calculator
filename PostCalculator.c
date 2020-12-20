@@ -77,11 +77,3 @@ Num Multiply(Num op1, Num op2) {
 Num Divide(Num op1, Num op2) {
 
 }
-
-int main()
-{
-    List s;
-    ListInit(&s);
-
-    LInsert(1);
-}
