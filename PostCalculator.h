@@ -1,13 +1,19 @@
 #ifndef __POST_CALCULATOR_H__
 #define __POST_CALCULATOR_H__
 
-#define INT     0
-#define DEC     1
+#include "InfixToPostfix.h"
 
-Num EvalRPNExp(pList list);
-Num Plus(pNum op1, pNum op2);
-Num Minus(pNum op1, pNum op2);
-Num Multiply(pNum op1, pNum op2);
-Num Divide(pNum op1, pNum op2);
+#define INT     0;
+#define DEC     1;
+
+Num EvalRPNExp(pList * postExp);
+
+Plus(Num op1, Num op2);
+
+Minus(Num op1, Num op2);
+
+Multiply(Num op1, Num op2);
+
+Divide(Num op1, Num op2);
 
 #endif

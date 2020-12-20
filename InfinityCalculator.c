@@ -1,123 +1,42 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "InfinityCalculator.h"
 
-void DigitInit(Digit * pDigit) {            // Digit 초기화
-    pDigit->digit = 0;
-    pDigit->next = NULL;
+#define TRUE        1
+#define FALSE       0
+
+void NumInit(Num * pnum) {
+    pnum->integer_part_size = 0;
+    pnum->decimal_part_size = 0;
+    pnum->integer_part = NULL;
+    pnum->decimal_part = NULL;
+}
+
+void IntPartInsert(Num * pnum, char data) {
+    Digit newDigit = (Digit*)malloc(sizeof (Digit));
+
+    newDigit.digit = data;
+    newDigit->next = pnum->integer_part;
+
+    pnum->integer_part = newDigit;
+}
+
+void DecPartInsert(Num * pnum, char data) {
+    Digit newDigit = (Digit*)malloc(sizeof (Digit));
+
+    newDigit.digit = data;
+    newDigit->next = pnum->decimal_part;
+
+    pnum->decimal_part = newDigit;
 }
 
 
-void OperandInit(pOperand * pstack) {            // 스택 초기화
-    pstack->head = NULL;
-}
 
-int OperandIsEmpty(pOperand * pstack) {              // 스택이 비어있는지 확인
-    if (pstack->head == NULL)
-        return TRUE;
-    else
-        return FALSE;
-}
-
-void OperandPush(pOperand * pstack, Num data) {      // 스택의 push연산
-    nNode * newNode = (nNode *)malloc(sizeof(nNode));
-
-    newNode->num = data;
-    newNode->next = pstack->head;
-
-    pstack->head = newNode;
-}
-
-Num OperandPop(pOperand * pstack) {                 // 스택의 pop 연산
-    Num rdata;
-    nNode* rnode;
-
-    if (OperandIsEmpty(pstack)) {
-        printf("stack memory error");
-        exit(-1);
-    }
-
-    rdata = pstack->head->num;
-    rnode = pstack->head;
-
-    pstack->head = pstack->head->next;
-    free(rnode);
-
-    return rdata;
-}
-
-Num OperandPeek(pOperand * pstack) {                 // 스택의 peek 연산
-    if (OperandIsEmpty(pstack)) {
-        printf("stack memory error");
-        exit(-1);
-    }
-    return pstack->head->num;
-}
-
-void OperatorInit(Operator * pstack) {            // 스택 초기화
-    pstack->head = NULL;
-}
-
-int OperatorIsEmpty(Operator * pstack) {              // 스택이 비어있는지 확인
-    if (pstack->head == NULL)
-        return TRUE;
-    else
-        return FALSE;
-}
-
-void OperatorPush(Operator * pstack, char data) {      // 스택의 push연산
-    cNode * newNode = (cNode *)malloc(sizeof(cNode));
-
-    newNode->data = data;
-    newNode->next = pstack->head;
-
-    pstack->head = newNode;
-}
-
-char OperatorPop(Operator * pstack) {                 // 스택의 pop 연산
-    char rdata;
-    nNode* rnode;
-
-    if (OperatorIsEmpty(pstack)) {
-        printf("stack memory error");
-        exit(-1);
-    }
-
-    rdata = pstack->head->data;
-    rnode = pstack->head;
-
-    pstack->head = pstack->head->next;
-    free(rnode);
-
-    return rdata;
-}
-
-char OperatorPeek(Operator * pstack) {                 // 스택의 peek 연산
-    if (OperatorIsEmpty(pstack)) {
-        printf("stack memory error");
-        exit(-1);
-    }
-    return pstack->head->data;
-}
-
-pNum NumInit(void) {                // Num 초기화
-    pNum num = malloc(sizeof(cNode));
-    num->integer_part = NULL;
-    num->integer_part_size = 0;
-    num->decimal_part = NULL;
-    num->decimal_part_size = 0;
-    num->positive = TRUE;
-    return num;
-}
-
-
-void ExpInit(Postfix * plist) {
+void ListInit(List * plist) {
     plist->head = NULL;
     plist->tail = NULL;
 }
 
-void ExpInsert(Postfix * plist, char data) {
-    cNode * newNode = (cNode*)malloc(sizeof(cNode));
+void LInsert(List * plist, char data) {
+    Node * newNode = (Node*)malloc(sizeof(Node));
     newNode->data = data;
     newNode->next = NULL;
 
@@ -130,9 +49,9 @@ void ExpInsert(Postfix * plist, char data) {
     plist->tail = newNode;
 }
 
-char LRemove(Postfix * plist) {
-    char rdata;
-    cNode * rnode;
+char LRemove(List* plist) {
+    LData rdata;
+    LNode* rnode;
 
     if (plist->head == NULL) {
         printf("list memory error");
@@ -148,3 +67,99 @@ char LRemove(Postfix * plist) {
     return rdata;
 }
 
+/* 피연산자 스택 */
+void OperandInit(Operand * pOp) {
+    pOp->head = NULL;
+}
+
+int OperandIsEmpty(Operand * pOp) {
+    if (pOp->head == NULL)
+        return TRUE;
+    else
+    return FALSE;
+}
+
+void OperandPush(Operand * pOp, Num data) {
+    Block * newBlock = (Block*)malloc(sizeof(Block));
+
+    newBlock->operand = data;
+    newBlock->next = pOp->head;
+
+    pOp->head = newBlock;
+}
+
+Num OperandPop(Operand * pOp) {
+    Num rdata;
+    Block * rblock;
+
+    if (OperandIsEmpty(pOp)) {
+        printf("stack memory error");
+        exit(-1);
+    }
+
+    rdata = pOp->head->operand;
+    rblock = pOp->head;
+
+    pOp->head = pOp->head->next;
+    free(rblock);
+
+    return rdata;
+}
+
+Num OperandPeek(Operand * pOp) {
+    if (OprandIsEmpty(&pOp)) {
+        printf("stack memory error");
+        exit(-1);
+    }
+
+    return pOp->head->operand;
+}
+
+
+/* 연산자 스택 */
+
+void OperatorInit(Operator * pOp) {
+    pOp->head = NULL;
+}
+
+int OperatorIsEmpty(Operator * pOp) {
+    if (pOp->head == NULL)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+void OperatorPush(Operator * pOp, char data) {
+    Node * newNode = (Node *)malloc(sizeof(Node));
+
+    newNode->data = data;
+    newNode->next = pOp->head;
+
+    pOp->head = newNode;
+}
+
+Data OperatorPop(Operator * pOp) {
+    char rdata;
+    Node * rnode;
+
+    if (OperatorIsEmpty(pOp)) {
+        printf("stack memory error");
+        exit(-1);
+    }
+
+    rdata = pOp->head->data;
+    rnode = pOp->head;
+
+    pOp->head = pOp->head->next;
+    free(rnode);
+
+    return rdata;
+}
+
+Data OperatorPeek(Operator * pOp) {
+    if (OperatorIsEmpty(pOp)) {
+        printf("stack memory error");
+        exit(-1);
+    }
+    return pOp->head->data;
+}

@@ -6,63 +6,60 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-#define TRUE    1
-#define FALSE   0
+#define TRUE    1;
+#define FALSE   0;
 
-typedef struct _digit {         // 리스트
+typedef struct _digit {
     int digit;
     struct _digit * next;
-} Digit, * pDigit;
+} Digit, pDigit;
 
 typedef struct _number {
     int integer_part_size;
     int decimal_part_size;
     Digit * integer_part;
     Digit * decimal_part;
-    int positive;
-} Num, * pNum;
+} Num, *pNum;
 
-typedef struct _cNode {         // char Node
-    char data;
-    struct _cNode * next;
-} cNode, *pcNode;
+typedef char Data;
 
-typedef struct _nNode {         // num Node
-    Num num;
-    struct _nNode * next;
-} nNode, *pnNode;
+typedef struct _node {
+    Data data;
+    struct _node * next;
+} Node;
 
-typedef struct list {       // 후위식 저장 리스트
-    cNode * head;
-    cNode * tail;
-} List, * pList;
+typedef struct _block {
+    Num operand;
+    struct _block * next;
+} Block;
 
-void ListInit(List * plist);
-void Insert(List * plist, List data);
-char Remove(List * plist);
+typedef struct _list {
+    Node * head;
+    Node * tail;
+} List;
 
-List pListInit(pList * plist);
-void pInsert(pList * plist, pList data);
-char pRemove(pList * plist);
+typedef struct _operator {
+    Node * head;
+} Operator;
 
-typedef struct _operand {       // operand stack
-    nNode * head;
-} Operand, *pOperand;
+typedef struct _operand {
+    Block * head;
+} Operand;
 
-typedef struct _operator {      // operator stack
-    cNode * head;
-} Operator, *pOperator;
+void ListInit (List * plist);
+void LInsert (List * plist);
+List LRemove (List * plist);
 
-void OperatorInit(Operator * pstack);            // 스택 초기화
-int OperatorIsEmpty(Operator * pstack);         // 스택이 비어있는지 확인
-void OperatorPush(Operator * pstack, char data); // 스택의 push연산
-char OperatorPop(Operator * pstack);            // 스택의 pop 연산
-char OperatorPeek(Operator * pstack);           // 스택의 peek연산 -> 가장 위에있는 data 확인
+void OperatorInit (Operator * pOp);
+int OperatorIsEmpty(Operand * pOp);
+void OperatorPush (Operator * pOp);
+Operator OperatorPop (Operator * pOp);
+Operator OperatorPeek (Operand * pOp);
 
-void OperandInit(pOperand * pstack);             // 스택 초기화
-int OperandIsEmpty(pOperand * pstack);           // 스택이 비어있는지 확인
-void OperandPush(pOperand * pstack, Num data);  // 스택의 push연산
-Num OperandPop(pOperand * pstack);              // 스택의 pop 연산
-Num OperandPeek(pOperand * pstack);             // 스택의 peek연산 -> 가장 위에있는 data 확인
+void OperandInit (Operand * pOp);
+int OperandIsEmpty(Operand * pOp);
+void OperandPush (Operand * pOp);
+Operand OperandPop (Operand * pOp);
+Operand OperandPeek (Operand * pOp);
 
 #endif
