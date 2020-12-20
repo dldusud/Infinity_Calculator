@@ -1,7 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/inf_calc.dir/LinkedList.c.obj"
-  "CMakeFiles/inf_calc.dir/Stack.c.obj"
-  "CMakeFiles/inf_calc.dir/inf_calc.c.obj"
   "CMakeFiles/inf_calc.dir/main.c.obj"
   "inf_calc.exe"
   "inf_calc.exe.manifest"

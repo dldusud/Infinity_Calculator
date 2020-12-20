@@ -8,6 +8,6 @@
 
 int getOpPrec(char op);
 int whoPrecOp(char op1, char op2);
-pList EvalRPNExp(char * exp);
+List EvalRPNExp(char * exp);
 
 ##endif

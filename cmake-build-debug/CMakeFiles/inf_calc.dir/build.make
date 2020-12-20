@@ -62,10 +62,10 @@ RM = C:\Users\choi1_lrf1xg7\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\203.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc
+CMAKE_SOURCE_DIR = C:\Users\choi1_lrf1xg7\CLionProjects\Infinity_Calculator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\choi1_lrf1xg7\CLionProjects\Infinity_Calculator\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/inf_calc.dir/depend.make
@@ -78,75 +78,30 @@ include CMakeFiles/inf_calc.dir/flags.make
 
 CMakeFiles/inf_calc.dir/main.c.obj: CMakeFiles/inf_calc.dir/flags.make
 CMakeFiles/inf_calc.dir/main.c.obj: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/inf_calc.dir/main.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\inf_calc.dir\main.c.obj   -c C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\choi1_lrf1xg7\CLionProjects\Infinity_Calculator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/inf_calc.dir/main.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\inf_calc.dir\main.c.obj   -c C:\Users\choi1_lrf1xg7\CLionProjects\Infinity_Calculator\main.c
 
 CMakeFiles/inf_calc.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/inf_calc.dir/main.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\main.c > CMakeFiles\inf_calc.dir\main.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\choi1_lrf1xg7\CLionProjects\Infinity_Calculator\main.c > CMakeFiles\inf_calc.dir\main.c.i
 
 CMakeFiles/inf_calc.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/inf_calc.dir/main.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\main.c -o CMakeFiles\inf_calc.dir\main.c.s
-
-CMakeFiles/inf_calc.dir/inf_calc.c.obj: CMakeFiles/inf_calc.dir/flags.make
-CMakeFiles/inf_calc.dir/inf_calc.c.obj: ../inf_calc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/inf_calc.dir/inf_calc.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\inf_calc.dir\inf_calc.c.obj   -c C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\inf_calc.c
-
-CMakeFiles/inf_calc.dir/inf_calc.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/inf_calc.dir/inf_calc.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\inf_calc.c > CMakeFiles\inf_calc.dir\inf_calc.c.i
-
-CMakeFiles/inf_calc.dir/inf_calc.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/inf_calc.dir/inf_calc.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\inf_calc.c -o CMakeFiles\inf_calc.dir\inf_calc.c.s
-
-CMakeFiles/inf_calc.dir/LinkedList.c.obj: CMakeFiles/inf_calc.dir/flags.make
-CMakeFiles/inf_calc.dir/LinkedList.c.obj: ../LinkedList.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/inf_calc.dir/LinkedList.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\inf_calc.dir\LinkedList.c.obj   -c C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\LinkedList.c
-
-CMakeFiles/inf_calc.dir/LinkedList.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/inf_calc.dir/LinkedList.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\LinkedList.c > CMakeFiles\inf_calc.dir\LinkedList.c.i
-
-CMakeFiles/inf_calc.dir/LinkedList.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/inf_calc.dir/LinkedList.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\LinkedList.c -o CMakeFiles\inf_calc.dir\LinkedList.c.s
-
-CMakeFiles/inf_calc.dir/Stack.c.obj: CMakeFiles/inf_calc.dir/flags.make
-CMakeFiles/inf_calc.dir/Stack.c.obj: ../Stack.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/inf_calc.dir/Stack.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\inf_calc.dir\Stack.c.obj   -c C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\Stack.c
-
-CMakeFiles/inf_calc.dir/Stack.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/inf_calc.dir/Stack.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\Stack.c > CMakeFiles\inf_calc.dir\Stack.c.i
-
-CMakeFiles/inf_calc.dir/Stack.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/inf_calc.dir/Stack.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\Stack.c -o CMakeFiles\inf_calc.dir\Stack.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\choi1_lrf1xg7\CLionProjects\Infinity_Calculator\main.c -o CMakeFiles\inf_calc.dir\main.c.s
 
 # Object files for target inf_calc
 inf_calc_OBJECTS = \
-"CMakeFiles/inf_calc.dir/main.c.obj" \
-"CMakeFiles/inf_calc.dir/inf_calc.c.obj" \
-"CMakeFiles/inf_calc.dir/LinkedList.c.obj" \
-"CMakeFiles/inf_calc.dir/Stack.c.obj"
+"CMakeFiles/inf_calc.dir/main.c.obj"
 
 # External object files for target inf_calc
 inf_calc_EXTERNAL_OBJECTS =
 
 inf_calc.exe: CMakeFiles/inf_calc.dir/main.c.obj
-inf_calc.exe: CMakeFiles/inf_calc.dir/inf_calc.c.obj
-inf_calc.exe: CMakeFiles/inf_calc.dir/LinkedList.c.obj
-inf_calc.exe: CMakeFiles/inf_calc.dir/Stack.c.obj
 inf_calc.exe: CMakeFiles/inf_calc.dir/build.make
 inf_calc.exe: CMakeFiles/inf_calc.dir/linklibs.rsp
 inf_calc.exe: CMakeFiles/inf_calc.dir/objects1.rsp
 inf_calc.exe: CMakeFiles/inf_calc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable inf_calc.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\choi1_lrf1xg7\CLionProjects\Infinity_Calculator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable inf_calc.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\inf_calc.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -159,6 +114,6 @@ CMakeFiles/inf_calc.dir/clean:
 .PHONY : CMakeFiles/inf_calc.dir/clean
 
 CMakeFiles/inf_calc.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\cmake-build-debug C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\cmake-build-debug C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\cmake-build-debug\CMakeFiles\inf_calc.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\choi1_lrf1xg7\CLionProjects\Infinity_Calculator C:\Users\choi1_lrf1xg7\CLionProjects\Infinity_Calculator C:\Users\choi1_lrf1xg7\CLionProjects\Infinity_Calculator\cmake-build-debug C:\Users\choi1_lrf1xg7\CLionProjects\Infinity_Calculator\cmake-build-debug C:\Users\choi1_lrf1xg7\CLionProjects\Infinity_Calculator\cmake-build-debug\CMakeFiles\inf_calc.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/inf_calc.dir/depend
 

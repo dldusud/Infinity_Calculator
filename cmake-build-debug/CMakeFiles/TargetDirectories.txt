@@ -1,3 +1,3 @@
-C:/Users/choi1_lrf1xg7/CLionProjects/inf_calc/cmake-build-debug/CMakeFiles/inf_calc.dir
-C:/Users/choi1_lrf1xg7/CLionProjects/inf_calc/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/choi1_lrf1xg7/CLionProjects/inf_calc/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/choi1_lrf1xg7/CLionProjects/Infinity_Calculator/cmake-build-debug/CMakeFiles/inf_calc.dir
+C:/Users/choi1_lrf1xg7/CLionProjects/Infinity_Calculator/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/choi1_lrf1xg7/CLionProjects/Infinity_Calculator/cmake-build-debug/CMakeFiles/rebuild_cache.dir

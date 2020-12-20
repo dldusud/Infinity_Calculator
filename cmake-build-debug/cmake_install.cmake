@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/choi1_lrf1xg7/CLionProjects/inf_calc
+# Install script for directory: C:/Users/choi1_lrf1xg7/CLionProjects/Infinity_Calculator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/choi1_lrf1xg7/CLionProjects/inf_calc/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/choi1_lrf1xg7/CLionProjects/Infinity_Calculator/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

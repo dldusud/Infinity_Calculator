@@ -67,10 +67,10 @@ RM = C:\Users\choi1_lrf1xg7\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\203.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc
+CMAKE_SOURCE_DIR = C:\Users\choi1_lrf1xg7\CLionProjects\Infinity_Calculator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\choi1_lrf1xg7\CLionProjects\Infinity_Calculator\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\cmake-build-debug\CMakeFiles C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\choi1_lrf1xg7\CLionProjects\Infinity_Calculator\cmake-build-debug\CMakeFiles C:\Users\choi1_lrf1xg7\CLionProjects\Infinity_Calculator\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\choi1_lrf1xg7\CLionProjects\inf_calc\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\choi1_lrf1xg7\CLionProjects\Infinity_Calculator\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -142,87 +142,6 @@ inf_calc/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\inf_calc.dir\build.make CMakeFiles/inf_calc.dir/build
 .PHONY : inf_calc/fast
 
-LinkedList.obj: LinkedList.c.obj
-
-.PHONY : LinkedList.obj
-
-# target to build an object file
-LinkedList.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\inf_calc.dir\build.make CMakeFiles/inf_calc.dir/LinkedList.c.obj
-.PHONY : LinkedList.c.obj
-
-LinkedList.i: LinkedList.c.i
-
-.PHONY : LinkedList.i
-
-# target to preprocess a source file
-LinkedList.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\inf_calc.dir\build.make CMakeFiles/inf_calc.dir/LinkedList.c.i
-.PHONY : LinkedList.c.i
-
-LinkedList.s: LinkedList.c.s
-
-.PHONY : LinkedList.s
-
-# target to generate assembly for a file
-LinkedList.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\inf_calc.dir\build.make CMakeFiles/inf_calc.dir/LinkedList.c.s
-.PHONY : LinkedList.c.s
-
-Stack.obj: Stack.c.obj
-
-.PHONY : Stack.obj
-
-# target to build an object file
-Stack.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\inf_calc.dir\build.make CMakeFiles/inf_calc.dir/Stack.c.obj
-.PHONY : Stack.c.obj
-
-Stack.i: Stack.c.i
-
-.PHONY : Stack.i
-
-# target to preprocess a source file
-Stack.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\inf_calc.dir\build.make CMakeFiles/inf_calc.dir/Stack.c.i
-.PHONY : Stack.c.i
-
-Stack.s: Stack.c.s
-
-.PHONY : Stack.s
-
-# target to generate assembly for a file
-Stack.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\inf_calc.dir\build.make CMakeFiles/inf_calc.dir/Stack.c.s
-.PHONY : Stack.c.s
-
-inf_calc.obj: inf_calc.c.obj
-
-.PHONY : inf_calc.obj
-
-# target to build an object file
-inf_calc.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\inf_calc.dir\build.make CMakeFiles/inf_calc.dir/inf_calc.c.obj
-.PHONY : inf_calc.c.obj
-
-inf_calc.i: inf_calc.c.i
-
-.PHONY : inf_calc.i
-
-# target to preprocess a source file
-inf_calc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\inf_calc.dir\build.make CMakeFiles/inf_calc.dir/inf_calc.c.i
-.PHONY : inf_calc.c.i
-
-inf_calc.s: inf_calc.c.s
-
-.PHONY : inf_calc.s
-
-# target to generate assembly for a file
-inf_calc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\inf_calc.dir\build.make CMakeFiles/inf_calc.dir/inf_calc.c.s
-.PHONY : inf_calc.c.s
-
 main.obj: main.c.obj
 
 .PHONY : main.obj
@@ -259,15 +178,6 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... inf_calc
-	@echo ... LinkedList.obj
-	@echo ... LinkedList.i
-	@echo ... LinkedList.s
-	@echo ... Stack.obj
-	@echo ... Stack.i
-	@echo ... Stack.s
-	@echo ... inf_calc.obj
-	@echo ... inf_calc.i
-	@echo ... inf_calc.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

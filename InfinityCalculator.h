@@ -53,13 +53,13 @@ List LRemove (List * plist);
 void OperatorInit (Operator * pOp);
 int OperatorIsEmpty(Operand * pOp);
 void OperatorPush (Operator * pOp);
-Operator OperatorPop (Operator * pOp);
-Operator OperatorPeek (Operand * pOp);
+Data OperatorPop (Operator * pOp);
+Data OperatorPeek (Operand * pOp);
 
 void OperandInit (Operand * pOp);
 int OperandIsEmpty(Operand * pOp);
 void OperandPush (Operand * pOp);
-Operand OperandPop (Operand * pOp);
-Operand OperandPeek (Operand * pOp);
+Num OperandPop (Operand * pOp);
+Num OperandPeek (Operand * pOp);
 
 #endif
