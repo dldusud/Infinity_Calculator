@@ -26,21 +26,21 @@ int DecPartIsEmpty(Num * pnum) {
 }
 
 void IntPartPush(Num * pnum, int data) {
-    Node * newNode = (Node *)malloc(sizeof(Node));
+    Digit * newDigit = (Digit *)malloc(sizeof(Digit));
 
-    newNode->data = data;
-    newNode->next = pnum->integer_part;
+    newDigit->digit = data;
+    newDigit->next = pnum->integer_part;
 
-    pnum->decimal_part = newNode;
+    pnum->integer_part = newDigit;
 }
 
 void DecPartPush(Num * pnum, int data) {
-    Node * newNode = (Node *)malloc(sizeof(Node));
+    Digit * newDigit = (Digit *)malloc(sizeof(Digit));
 
-    newNode->data = data;
-    newNode->next = pnum->decimal_part;
+    newDigit->digit = data;
+    newDigit->next = pnum->decimal_part;
 
-    pnum->decimal_part = newNode;
+    pnum->decimal_part = newDigite;
 }
 
 int IntPartPop(Num * pnum) {
@@ -79,7 +79,7 @@ int DecPartPop(Num * pnum) {
     return rdata;
 }
 
-int IntPartPop(Num * pnum) {
+int IntPartPeek(Num * pnum) {
     if (IntPartIsEmpty(pnum)) {
         printf("stack memory error");
         exit(-1);
@@ -88,7 +88,7 @@ int IntPartPop(Num * pnum) {
     return pnum->integer_part->digit;
 }
 
-int DecPartPop(Num * pnum) {
+int DecPartPeek(Num * pnum) {
     if (DecPartIsEmpty(pnum)) {
         printf("stack memory error");
         exit(-1);
