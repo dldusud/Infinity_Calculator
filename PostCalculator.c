@@ -51,7 +51,7 @@ Num Plus(Num op1, Num op2) {
     int decimal[] = { 0, };
 
     struct Digit *curr1 = (&op1)->decimal_part;
-    struct Digit *curr2 = (&op2)->decimal_part->next;
+    struct Digit *curr2 = (&op2)->decimal_part;
 
 
     int i = 0;
