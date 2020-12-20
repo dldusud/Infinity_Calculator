@@ -4,8 +4,8 @@
 int getOpPrec(char op);
 int whoPrecOp(char op1, char op2);
 
-pList inf_to_pos(char* exp) {
-    Stack stack;
+List inf_to_pos(char* exp) {
+    Operator op;
     List convExp;
     int i, idx = 0;
     char tok, popOp;
@@ -21,11 +21,13 @@ pList inf_to_pos(char* exp) {
                 case '.':                           // '.' 이면,
                     LInsert(&convExp, tok);         // 소수점을 배열에 저장.
                 case '(':                           // '(' 이면,
-                    Push(&stack, tok);              // stack애 쌓는다.
+                    LInsert(&covExp, ' ');
+                    OperatorPush(&op, tok);              // stack애 쌓는다.
                     break;
                 case ')':                           // ')' 이면,
+                    LInsert(&covExp, ' ');
                     while (1) {                     // 반복해서
-                        popOp = Pop(&stack);        // stack에서 꺼낸다.
+                        popOp = OperatorPop(&op);        // stack에서 꺼낸다.
                         if (popOp == '(')           // '(' 일 때까지,
                             break;
                         LInsert(&convExp, popOp);   // 배열에 연산자 저장
@@ -33,16 +35,17 @@ pList inf_to_pos(char* exp) {
                     break;
                 case '+': case '-':
                 case '*': case '/':
-                    while (!SIsEmpty(&stack) && whoPrecOp(Peek(&stack), tok) >= 0)
-                        LInsert(&convExp, Pop(&stack));
-                    Push(&stack, tok);
+                    LInsert(&covExp, ' ');
+                    while (!OperatorIsEmpty(&op) && whoPrecOp(OperatorPeek(&op), tok) >= 0)
+                        LInsert(&convExp, OperatorPop(&op));
+                    OperatorPush(&op, tok);
                     break;
             }
         }
     }
 
-    while (!SIsEmpty(&stack))                   // 스택에 남아있는 모든 연산자를,
-        LInsert(&convExp, Pop(&stack));         // 배열에 저장.
+    while (!OperatorIsEmpty(&op))                   // 스택에 남아있는 모든 연산자를,
+        LInsert(&convExp, OperatorPop(&op));         // 배열에 저장.
 
     return convExp;
 }

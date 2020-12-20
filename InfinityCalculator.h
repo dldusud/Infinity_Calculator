@@ -46,6 +46,16 @@ typedef struct _operand {
     Block * head;
 } Operand;
 
+void NumInit(Num * pnum);
+int IntPartIsEmpty(Num * pnum);
+int DecPartIsEmpty(Num * pnum);
+void IntPartPush(Num * pnum, int data);
+void DecPartPush(Num * pnum, int data);
+int IntPartPop(Num * pnum);
+int DecPartPop(Num * pnum);
+int IntPartPeek(Num * pnum);
+int DecPartPeek(Num * pnum);
+
 void ListInit (List * plist);
 void LInsert (List * plist);
 List LRemove (List * plist);
